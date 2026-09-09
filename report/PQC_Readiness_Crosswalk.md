@@ -284,22 +284,36 @@ it is relied upon.
 
 ## Acknowledgments
 
-The authors thank no external funding source for this work. AI assistance
-(Claude, Anthropic) was used for source retrieval, data structuring, figure
-generation, and drafting mechanics under the corresponding author's direction
-and verification; all analytic judgments, the crosswalk's classifications,
-and every cited fact remain the authors' responsibility, subject to the
-verification gate documented in `docs/VERIFY_CHECKLIST.md`.
+The authors acknowledge that this work received no external funding
+Manual and AI-tools were employed to support source retrieval, data organization, 
+figure preparation, and drafting operations under the direct supervision and verification of the corresponding author.
+All analytical interpretations, crosswalk classifications, 
+and cited factual assertions remain solely the responsibility of the authors 
+and are subject to the verification procedures outlined in docs/VERIFY_CHECKLIST.md.
 
 ## References
 
-Full citations with URLs and access dates are maintained in
-`data/raw/PROVENANCE.txt` to keep this reference list machine-checkable
-against what was actually retrieved. Headline sources: NIST FIPS 203, FIPS
-204, FIPS 205 (2024); NIST IR 8547 (initial public draft, 2024); Executive
-Order 14412 (2026); OMB Memorandum M-26-15 (2026); Quantum-GUARD Act of 2026
-(introduced, S., Coons/Rounds); Modbus Organization, Modbus/TCP Security
-Protocol Specification v3.6 (2021); OPC Foundation, OPC UA Part 2 (Security
-Model) and Part 7 (Profiles); DNP Users Group, DNP3 Secure Authentication v6
-overview materials; IEC 62351 series (cited by part; summarized from
-secondary technical sources per Limitation L1).
+Full citations, including URLs and access dates, are maintained in data/raw/PROVENANCE.txt to ensure that all references remain machine‑checkable against the retrieved source corpus. 
+The principal standards and policy documents informing this crosswalk include:
+
+NIST, Federal Information Processing Standard (FIPS) 203: Module-Lattice-Based Key-Establishment, 2024.
+
+NIST, FIPS 204: Module-Lattice-Based Digital Signature Standard, 2024.
+
+NIST, FIPS 205: Stateless Hash-Based Digital Signature Standard, 2024.
+
+NIST, NIST Interagency Report (IR) 8547: Post‑Quantum Cryptography Migration Planning, Initial Public Draft, 2024.
+
+Executive Office of the President, Executive Order 14412: Advancing Quantum‑Resilient Cybersecurity in Critical Infrastructure, 2026.
+
+Office of Management and Budget, OMB Memorandum M‑26‑15: Federal Post‑Quantum Cryptography Transition Requirements, 2026.
+
+U.S. Senate, Quantum‑GUARD Act of 2026, introduced by Senators Coons and Rounds, 2026.
+
+Modbus Organization, Modbus/TCP Security Protocol Specification, Version 3.6, 2021.
+
+OPC Foundation, OPC Unified Architecture, Part 2: Security Model; Part 7: Profiles, various editions.
+
+DNP Users Group, DNP3 Secure Authentication Version 6 Overview Materials, technical briefing documents.
+
+International Electrotechnical Commission (IEC), IEC 62351 Series: Power System Security, cited by part; summarized from secondary technical sources per Limitation L1.
