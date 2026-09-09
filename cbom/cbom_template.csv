@@ -1,0 +1,1 @@
+asset_id,asset_type,location_class,protocol,crypto_function,algorithm,key_or_hash_size_bits,primitive_family,quantum_vulnerable,pqc_replacement_reference,vendor_pqc_support,pqc_migration_status,compensating_control,driving_deadline_ref,notes,last_reviewed

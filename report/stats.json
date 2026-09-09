@@ -1,0 +1,54 @@
+{
+  "n_protocols_covered": 10,
+  "protocols_covered": [
+    "DNP3",
+    "ICCP/TASE.2",
+    "IEC 60870-5-104",
+    "IEC 61850 (GOOSE / Sampled Values)",
+    "IEC 61850 (MMS services)",
+    "IEC 62351-9 (key management)",
+    "IEEE C37.118.2 (Synchrophasor / PMU data)",
+    "Modbus Security (Modbus/TCP over TLS)",
+    "NERC CIP identity and access management (CIP-005, CIP-007, CIP-004)",
+    "OPC UA"
+  ],
+  "n_crosswalk_rows": 13,
+  "n_crypto_functions": 12,
+  "crypto_functions": [
+    "application authentication",
+    "application authentication + access control",
+    "authentication",
+    "bulk encryption / integrity",
+    "identity governance",
+    "key distribution",
+    "key establishment / enrollment",
+    "message integrity + authentication",
+    "transport + application authentication",
+    "transport authentication",
+    "transport authentication + key exchange",
+    "transport signature + key exchange"
+  ],
+  "n_verified_rows_previously_flagged": 6,
+  "verified_row_ids_previously_flagged": [
+    "3",
+    "5",
+    "8",
+    "9",
+    "12",
+    "13"
+  ],
+  "verification_sign_off_date": "2026-09-09",
+  "n_timeline_events": 11,
+  "n_timeline_events_federal_only_scope": 9,
+  "n_timeline_events_naming_energy_or_grid_directly": 2,
+  "earliest_federal_outcome_deadline": "2030-01-02",
+  "latest_federal_outcome_deadline": "2035",
+  "nist_ir_8547_status": "initial public draft (ipd); comment period closed 2025-01-10; no second draft or final identified as of 2026-09-09",
+  "cisa_cbom_guidance_due": "~2026-12-19 (180 days after EO 14412, 2026-06-22); not yet published as of 2026-09-09",
+  "pending_legislation": [
+    "Quantum-GUARD Act of 2026 (introduced 2026-08-18; not enacted)"
+  ],
+  "hardest_technical_gap_row_id": "9",
+  "hardest_technical_gap_summary": "IEC 61850 GOOSE/SV protection-class messages (~4 ms delivery budget) vs. FIPS 204/205 signature sizes",
+  "build_date": "2026-09-09"
+}

@@ -1,0 +1,28 @@
+# Provenance log
+#
+# Format: access_date | source_id | url | retrieval_method | note
+#
+# NOTE ON METHOD: this project's build sandbox had outbound network access
+# blocked (by its organization's egress policy) to nist.gov, whitehouse.gov,
+# presidency.ucsb.edu, and modbus.org at the time of this build (2026-09-09;
+# confirmed via the sandbox's own proxy status log, recorded as
+# connect_rejected/403 for each host). All primary-source content below was
+# instead retrieved through the session's web-fetch tool (which is not
+# subject to the same block) rather than downloaded as a locally hashed file.
+# No file in data/raw/ is a byte-for-byte vendored copy of its source; each
+# citation below is the URL + access date, which the reader can re-fetch to
+# verify. This is recorded in docs/LIMITATIONS.md as limitation L1.
+
+2026-09-09 | fips-203-205-federal-register | https://www.federalregister.gov/documents/2024/08/14/2024-17956/announcing-issuance-of-federal-information-processing-standards-fips-fips-203-module-lattice-based | web-fetch (search result summary) | FIPS 203/204/205 issuance notice, finalized 2024-08-13.
+2026-09-09 | fips-203-205-nist-news | https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards | web-fetch (search result summary) | NIST announcement of finalized PQC standards.
+2026-09-09 | nist-ir-8547-ipd-landing | https://csrc.nist.gov/pubs/ir/8547/ipd | web-fetch (full page content) | Confirms IR 8547 remains in Initial Public Draft status; published 2024-11-12, comments closed 2025-01-10.
+2026-09-09 | nist-ir-8547-ipd-pdf | https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf | cited, not fetched (network-blocked) | Full draft text; cite by section when quoting, re-verify against fetched copy before release.
+2026-09-09 | eo-14412-text | https://www.presidency.ucsb.edu/documents/executive-order-14412-securing-the-nation-against-advanced-cryptographic-attacks | web-fetch (full page content) | EO 14412 signed 2026-06-22; deadlines and agency responsibilities extracted verbatim from fetched summary.
+2026-09-09 | m-26-15-pdf | https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf | web-fetch (full page content) | OMB M-26-15 dated 2026-06-24; milestones and phases extracted from fetched summary.
+2026-09-09 | quantum-guard-act | https://thequantuminsider.com/2026/08/18/bipartisan-bill-quantum-cybersecurity-risks-electric-grid/ | web-fetch (full page content) | Quantum-GUARD Act of 2026, introduced 2026-08-18, Sens. Coons and Rounds; status: introduced, not enacted.
+2026-09-09 | iec-62351-ipcomm-sheet | https://www.ipcomm.de/protocol/IEC62351/en/sheet.html | web-fetch (full page content) | Secondary summary mapping IEC 62351 parts 3/4/5/6/7/8/9/11 to protocols and mechanisms; primary IEC 62351 text is paywalled and was not accessed.
+2026-09-09 | modbus-security-v36-pdf | https://www.modbus.org/file/secure/modbussecurityprotocol.pdf | web-fetch (full page content) | Modbus/TCP Security Protocol Specification v3.6 (2021-07-30), freely published by the Modbus Organization; TLS version, cipher suites, and certificate rules extracted directly.
+2026-09-09 | dnp3-sav6-overview-pdf | https://www.dnp.org/LinkClick.aspx?fileticket=hyvYMYugaQI%3D&tabid=66&portalid=0&mid=447&forcedownload=true | web-fetch (full page content) | DNP Users Group public overview of DNP3 Secure Authentication v6 (SAv6); primary spec is member-restricted.
+2026-09-09 | opcua-part7-profiles-index | https://reference.opcfoundation.org/v104/Core/docs/Part7/6.6.165/ | web-fetch (attempted; JS-rendered, no machine-readable content returned) | Could not extract SecurityPolicy algorithm parameters directly; cross-checked against vendor documentation instead (see next rows). Originally flagged for author review in crosswalk.csv; author confirmed against OPC UA Part 7 directly and signed off 2026-09-09 (see docs/VERIFY_CHECKLIST.md).
+2026-09-09 | opcua-vendor-doc-unified-automation | https://documentation.unified-automation.com/uasdkhp/1.9.0/html/config_security.html | web-fetch (full page content) | Confirms which OPC UA SecurityPolicies are deprecated vs. current (Basic256Sha256, Aes256Sha256RsaPss "secure"); does not give per-algorithm cipher detail.
+2026-09-09 | c37118-90-5-overview | https://www.researchgate.net/publication/316060941_IEEE_C37118-2_Synchrophasor_Communication_Framework_Overview_Cyber_Vulnerabilities_Analysis_and_Performance_Evaluation | web-fetch (search result summary) | Confirms IEEE C37.118.2 specifies no native cryptography; security is added via IEC 61850-90-5 or external transport (TLS/VPN).

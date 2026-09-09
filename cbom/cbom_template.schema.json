@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/pqc-readiness-crosswalk/cbom_template.schema.json",
+  "title": "Energy OT Cryptographic Bill of Materials (CBOM) — v1.0",
+  "description": "A per-asset cryptographic inventory record for energy-sector OT devices and identity infrastructure, adapted from the CycloneDX Cryptographic Bill of Materials concept (see docs/CODEBOOK.md for field-by-field provenance) for utilities that need a flat, spreadsheet-friendly starting point ahead of any CISA CBOM guidance (expected under EO 14412, ~2026-12-19; reconcile this template against that guidance once published).",
+  "type": "object",
+  "required": ["asset_id", "asset_type", "protocol", "crypto_function", "algorithm", "key_or_hash_size_bits", "primitive_family", "quantum_vulnerable", "pqc_migration_status", "last_reviewed"],
+  "properties": {
+    "asset_id": {
+      "type": "string",
+      "description": "Unique identifier for the physical or logical asset (device serial, hostname, or utility asset-tag). Never include personally identifying information."
+    },
+    "asset_type": {
+      "type": "string",
+      "enum": ["RTU", "IED", "relay", "merging_unit", "PMU", "gateway", "HMI", "historian", "control_center_server", "PKI_CA", "PKI_issuing_CA", "firewall_VPN", "other"],
+      "description": "Category of the device or system carrying this cryptographic dependency."
+    },
+    "location_class": {
+      "type": "string",
+      "enum": ["substation", "control_center", "generation_site", "distribution_field", "corporate_DMZ", "other"],
+      "description": "Coarse deployment location, deliberately non-geolocating."
+    },
+    "protocol": {
+      "type": "string",
+      "enum": ["DNP3", "IEC 60870-5-104", "ICCP/TASE.2", "Modbus Security", "OPC UA", "IEC 61850 GOOSE/SV", "IEC 61850 MMS", "IEEE C37.118.2", "IEC 62351-9 (key management)", "other"],
+      "description": "The wire protocol or standard this cryptographic dependency belongs to. See data/processed/crosswalk.csv for the reference mapping."
+    },
+    "crypto_function": {
+      "type": "string",
+      "enum": ["key_establishment", "authentication_signature", "bulk_encryption", "integrity_mac", "key_management_distribution"],
+      "description": "The cryptographic role this algorithm plays, matching the crosswalk's unit of analysis."
+    },
+    "algorithm": {
+      "type": "string",
+      "description": "The specific algorithm and parameter set in use today, e.g. 'RSA-2048', 'ECDSA-P256', 'AES-256-GCM', 'HMAC-SHA256'."
+    },
+    "key_or_hash_size_bits": {
+      "type": "integer",
+      "description": "Key length (asymmetric/symmetric) or hash/MAC output size in bits."
+    },
+    "primitive_family": {
+      "type": "string",
+      "enum": ["RSA", "ECC", "AES", "SHA-2", "SHA-3", "HMAC", "ML-KEM", "ML-DSA", "SLH-DSA", "composite_hybrid", "other"],
+      "description": "Algorithm family, for rollup reporting."
+    },
+    "quantum_vulnerable": {
+      "type": "string",
+      "enum": ["yes_shor", "yes_grover_margin_only", "no"],
+      "description": "yes_shor = broken by a cryptographically relevant quantum computer (RSA, ECC/ECDSA/ECDH); yes_grover_margin_only = symmetric primitive whose effective security is halved by Grover's algorithm but which remains usable at doubled key size (AES-256, SHA-384/512); no = not a cryptographic primitive at quantum risk."
+    },
+    "pqc_replacement_reference": {
+      "type": "string",
+      "description": "FIPS reference for the intended replacement/hybrid, e.g. 'FIPS 203 (ML-KEM-768)', 'FIPS 204 (ML-DSA-65)', 'FIPS 205 (SLH-DSA-SHA2-128s)', or 'n/a - not quantum-vulnerable'."
+    },
+    "vendor_pqc_support": {
+      "type": "string",
+      "enum": ["available_now", "roadmap_committed", "roadmap_uncommitted", "unknown", "not_applicable_eol"],
+      "description": "Whether the device/software vendor has shipped, committed to, or given no indication of PQC support."
+    },
+    "pqc_migration_status": {
+      "type": "string",
+      "enum": ["not_started", "planned", "piloting", "migrated_hybrid", "migrated_pure_pqc", "not_applicable"],
+      "description": "This asset's own migration status, independent of vendor support."
+    },
+    "compensating_control": {
+      "type": "string",
+      "description": "Any compensating control in place while native PQC support is unavailable (e.g., network segmentation, external VPN/TLS tunnel, physical access control). Free text."
+    },
+    "driving_deadline_ref": {
+      "type": "string",
+      "description": "Which row of data/processed/timeline.csv (by event_id) this asset's migration is planned against, if any."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free-text notes; do not include vendor-confidential contract terms or anything the utility would not want in a document it might one day share with a regulator or auditor."
+    },
+    "last_reviewed": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date this inventory row was last confirmed accurate."
+    }
+  }
+}
