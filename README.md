@@ -72,7 +72,17 @@ paywalled (see `docs/LIMITATIONS.md`, item L1).
 
 Thirteen crosswalk rows span ten named protocols/standards and twelve
 cryptographic functions. Six of the thirteen rows (46%) originally carried a
-review flag because an algorithm-parameter detail could not be confirmed from a directly machine-readable primary source inside this build's sandbox; the author has since checked each against the primary standard and signed off on 2026-09-09 — see `docs/VERIFY_CHECKLIST.md` for the record. NIST IR 8547, the roadmap every federal PQC plan is told to align with, remains an initial public draft with no second draft or final identified as of 2026-09-09. CISA's cryptographic-bill-of-materials guidance for critical infrastructure, due under EO 14412 around 2026-12-19, had not yet been published as of this build. The single hardest technical gap identified is row 9: IEC 61850 GOOSE/Sampled-Values protection messages carry a roughly 4 ms delivery budget that current-generation FIPS 204/205 signature sizes may not fit without a lighter-weight scheme.
+review flag because an algorithm-parameter detail could not be confirmed from
+a directly machine-readable primary source inside this build's sandbox; the
+author has since checked each against the primary standard and signed off on
+2026-09-09 — see `docs/VERIFY_CHECKLIST.md` for the record. NIST IR 8547, the roadmap every federal PQC plan
+is told to align with, remains an initial public draft with no second draft
+or final identified as of 2026-09-09. CISA's cryptographic-bill-of-materials
+guidance for critical infrastructure, due under EO 14412 around 2026-12-19,
+had not yet been published as of this build. The single hardest technical gap
+identified is row 9: IEC 61850 GOOSE/Sampled-Values protection messages carry
+a roughly 4 ms delivery budget that current-generation FIPS 204/205 signature
+sizes may not fit without a lighter-weight scheme.
 
 ## Limitations
 

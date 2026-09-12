@@ -2,7 +2,7 @@
 
 **Friday Ogochukwu Ikwuogu**¹* · **Abidemi Orimogunje**² · **Eria Othieno Pinyi**³ · **David Mike-Ewewie**⁴
 
-¹ Independent Researcher, Odessa, Texas, USA
+¹ Independent Researcher - Critical Infrastructure, Odessa, Texas, USA
 ² Electrical and Electronic Engineering Department, Redeemer's University, Ede, Osun State, Nigeria
 ³ Computer Science and Engineering Department, University of Fairfax, USA
 ⁴ Computer Science Department, University of Texas Permian Basin, Odessa, Texas, USA
@@ -10,7 +10,7 @@
 *Corresponding author.
 ORCID: [0009-0009-2222-1318](https://orcid.org/0009-0009-2222-1318)
 Email: [Friday.ikwuogu@gmail.com](mailto:Friday.ikwuogu@gmail.com)
-Affiliation: Independent Researcher, Odessa, Texas, USA
+Affiliation: Independent Researcher - Critical Infrastructure, Odessa, Texas, USA
 
 **License:** CC BY 4.0 · **Version:** 1.0.0 · **Date:** 2026-09-09 · **Repository:** github.com/foikwuogu/PQC-Readiness-Crosswalk-for-Energy-OT-Protocols-and-Identity-Systems · **DOI:** pending (Zenodo)
 
@@ -284,36 +284,29 @@ it is relied upon.
 
 ## Acknowledgments
 
-The authors acknowledge that this work received no external funding
-Manual and AI-tools were employed to support source retrieval, data organization, 
-figure preparation, and drafting operations under the direct supervision and verification of the corresponding author.
-All analytical interpretations, crosswalk classifications, 
-and cited factual assertions remain solely the responsibility of the authors 
-and are subject to the verification procedures outlined in docs/VERIFY_CHECKLIST.md.
+The authors acknowledge that this work received no external funding. Manual
+and AI tools were employed to support source retrieval, data organization,
+figure preparation, and drafting operations under the direct supervision and
+verification of the corresponding author. All analytical interpretations,
+crosswalk classifications, and cited factual assertions remain solely the
+responsibility of the authors and are subject to the verification procedures
+outlined in `docs/VERIFY_CHECKLIST.md`.
 
 ## References
 
-Full citations, including URLs and access dates, are maintained in data/raw/PROVENANCE.txt to ensure that all references remain machine‑checkable against the retrieved source corpus. 
-The principal standards and policy documents informing this crosswalk include:
+Full citations, including URLs and access dates, are maintained in
+`data/raw/PROVENANCE.txt` to ensure that all references remain
+machine-checkable against the retrieved source corpus. The principal
+standards and policy documents informing this crosswalk include:
 
-NIST, Federal Information Processing Standard (FIPS) 203: Module-Lattice-Based Key-Establishment, 2024.
-
-NIST, FIPS 204: Module-Lattice-Based Digital Signature Standard, 2024.
-
-NIST, FIPS 205: Stateless Hash-Based Digital Signature Standard, 2024.
-
-NIST, NIST Interagency Report (IR) 8547: Post‑Quantum Cryptography Migration Planning, Initial Public Draft, 2024.
-
-Executive Office of the President, Executive Order 14412: Advancing Quantum‑Resilient Cybersecurity in Critical Infrastructure, 2026.
-
-Office of Management and Budget, OMB Memorandum M‑26‑15: Federal Post‑Quantum Cryptography Transition Requirements, 2026.
-
-U.S. Senate, Quantum‑GUARD Act of 2026, introduced by Senators Coons and Rounds, 2026.
-
-Modbus Organization, Modbus/TCP Security Protocol Specification, Version 3.6, 2021.
-
-OPC Foundation, OPC Unified Architecture, Part 2: Security Model; Part 7: Profiles, various editions.
-
-DNP Users Group, DNP3 Secure Authentication Version 6 Overview Materials, technical briefing documents.
-
-International Electrotechnical Commission (IEC), IEC 62351 Series: Power System Security, cited by part; summarized from secondary technical sources per Limitation L1.
+1. NIST, Federal Information Processing Standard (FIPS) 203: Module-Lattice-Based Key-Establishment, 2024.
+2. NIST, FIPS 204: Module-Lattice-Based Digital Signature Standard, 2024.
+3. NIST, FIPS 205: Stateless Hash-Based Digital Signature Standard, 2024.
+4. NIST, NIST Interagency Report (IR) 8547: Transition to Post-Quantum Cryptography Standards, Initial Public Draft, 2024.
+5. Executive Office of the President, Executive Order 14412: Securing the Nation Against Advanced Cryptographic Attacks, 2026.
+6. Office of Management and Budget, OMB Memorandum M-26-15: Execution of the Migration to Post-Quantum Cryptography, 2026.
+7. U.S. Senate, Quantum-GUARD Act of 2026, introduced by Senators Coons and Rounds, 2026.
+8. Modbus Organization, Modbus/TCP Security Protocol Specification, Version 3.6, 2021.
+9. OPC Foundation, OPC Unified Architecture, Part 2: Security Model; Part 7: Profiles, various editions.
+10. DNP Users Group, DNP3 Secure Authentication Version 6 Overview Materials, technical briefing documents.
+11. International Electrotechnical Commission (IEC), IEC 62351 Series: Power System Security, cited by part; summarized from secondary technical sources per Limitation L1.

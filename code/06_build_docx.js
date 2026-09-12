@@ -55,7 +55,7 @@ const titleBlock = [
     new TextRun({ text: "Eria Othieno Pinyi" }), new TextRun({ text: "³ · " }),
     new TextRun({ text: "David Mike-Ewewie" }), new TextRun({ text: "⁴" }),
   ]}),
-  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 }, children: [new TextRun({ text: "¹ Independent Researcher, Odessa, Texas, USA", size: 18 })] }),
+  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 }, children: [new TextRun({ text: "¹ Independent Researcher - Critical Infrastructure, Odessa, Texas, USA", size: 18 })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 }, children: [new TextRun({ text: "² Electrical and Electronic Engineering Department, Redeemer's University, Ede, Osun State, Nigeria", size: 18 })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 }, children: [new TextRun({ text: "³ Computer Science and Engineering Department, University of Fairfax, USA", size: 18 })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 200 }, children: [new TextRun({ text: "⁴ Computer Science Department, University of Texas Permian Basin, Odessa, Texas, USA", size: 18 })] }),
@@ -71,7 +71,7 @@ const titleBlock = [
     link("Friday.ikwuogu@gmail.com", "mailto:Friday.ikwuogu@gmail.com"),
   ]}),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 }, children: [
-    new TextRun({ text: "Affiliation: Independent Researcher, Odessa, Texas, USA", size: 18 }),
+    new TextRun({ text: "Affiliation: Independent Researcher - Critical Infrastructure, Odessa, Texas, USA", size: 18 }),
   ]}),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 300 }, children: [
     new TextRun({ text: "License: CC BY 4.0  ·  Version 1.0.0  ·  Date 2026-09-09  ·  DOI: pending (Zenodo)", size: 18, color: "52514E" }),
@@ -205,13 +205,33 @@ sections.push(p(
 
 sections.push(h("Acknowledgments", HeadingLevel.HEADING_2));
 sections.push(p(
-  "The authors thank no external funding source for this work. AI assistance (Claude, Anthropic) was used for source retrieval, data structuring, figure generation, and drafting mechanics under the corresponding author's direction and verification; all analytic judgments, the crosswalk's classifications, and every cited fact remain the authors' responsibility, subject to the verification gate documented in docs/VERIFY_CHECKLIST.md."
+  "The authors acknowledge that this work received no external funding. Manual and AI tools were employed to support source retrieval, data organization, figure preparation, and drafting operations under the direct supervision and verification of the corresponding author. All analytical interpretations, crosswalk classifications, and cited factual assertions remain solely the responsibility of the authors and are subject to the verification procedures outlined in docs/VERIFY_CHECKLIST.md."
 ));
 
 sections.push(h("References", HeadingLevel.HEADING_2));
 sections.push(p(
-  "Full citations with URLs and access dates are maintained in data/raw/PROVENANCE.txt to keep this reference list machine-checkable against what was actually retrieved. Headline sources: NIST FIPS 203, FIPS 204, FIPS 205 (2024); NIST IR 8547 (initial public draft, 2024); Executive Order 14412 (2026); OMB Memorandum M-26-15 (2026); Quantum-GUARD Act of 2026 (introduced, S., Coons/Rounds); Modbus Organization, Modbus/TCP Security Protocol Specification v3.6 (2021); OPC Foundation, OPC UA Part 2 (Security Model) and Part 7 (Profiles); DNP Users Group, DNP3 Secure Authentication v6 overview materials; IEC 62351 series (cited by part; summarized from secondary technical sources per Limitation L1)."
+  "Full citations, including URLs and access dates, are maintained in data/raw/PROVENANCE.txt to ensure that all references remain machine-checkable against the retrieved source corpus. The principal standards and policy documents informing this crosswalk include:"
 ));
+const referenceList = [
+  "NIST, Federal Information Processing Standard (FIPS) 203: Module-Lattice-Based Key-Establishment, 2024.",
+  "NIST, FIPS 204: Module-Lattice-Based Digital Signature Standard, 2024.",
+  "NIST, FIPS 205: Stateless Hash-Based Digital Signature Standard, 2024.",
+  "NIST, NIST Interagency Report (IR) 8547: Transition to Post-Quantum Cryptography Standards, Initial Public Draft, 2024.",
+  "Executive Office of the President, Executive Order 14412: Securing the Nation Against Advanced Cryptographic Attacks, 2026.",
+  "Office of Management and Budget, OMB Memorandum M-26-15: Execution of the Migration to Post-Quantum Cryptography, 2026.",
+  "U.S. Senate, Quantum-GUARD Act of 2026, introduced by Senators Coons and Rounds, 2026.",
+  "Modbus Organization, Modbus/TCP Security Protocol Specification, Version 3.6, 2021.",
+  "OPC Foundation, OPC Unified Architecture, Part 2: Security Model; Part 7: Profiles, various editions.",
+  "DNP Users Group, DNP3 Secure Authentication Version 6 Overview Materials, technical briefing documents.",
+  "International Electrotechnical Commission (IEC), IEC 62351 Series: Power System Security, cited by part; summarized from secondary technical sources per Limitation L1.",
+];
+referenceList.forEach((text, i) => {
+  sections.push(new Paragraph({
+    spacing: { after: 120 },
+    indent: { left: 360, hanging: 360 },
+    children: [new TextRun({ text: `${i + 1}. ${text}` })],
+  }));
+});
 
 const doc = new Document({
   sections: [{
