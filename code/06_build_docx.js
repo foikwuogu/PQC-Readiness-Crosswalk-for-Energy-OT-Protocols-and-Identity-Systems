@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /* Build report/PQC_Readiness_Crosswalk.docx from structured content.
  * Mirrors report/PQC_Readiness_Crosswalk.md. Run: node code/06_build_docx.js [--final]
  */
@@ -43,22 +43,22 @@ const draftBanner = FINAL ? [] : [
     alignment: AlignmentType.CENTER,
     spacing: { after: 300 },
     shading: { type: ShadingType.CLEAR, color: "auto", fill: "FDECC8" },
-    children: [new TextRun({ text: "DRAFT — unverified. Remove this banner only after docs/VERIFY_CHECKLIST.md is complete.", bold: true, color: "8A5A00" })],
+    children: [new TextRun({ text: "DRAFT â€” unverified. Remove this banner only after docs/VERIFY_CHECKLIST.md is complete.", bold: true, color: "8A5A00" })],
   }),
 ];
 
 const titleBlock = [
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 80 }, children: [new TextRun({ text: "PQC Readiness Crosswalk for Energy OT Protocols and Identity Systems", bold: true, size: 32 })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 200 }, children: [
-    new TextRun({ text: "Friday Ogochukwu Ikwuogu", bold: true }), new TextRun({ text: "¹* · " }),
-    new TextRun({ text: "Abidemi Orimogunje" }), new TextRun({ text: "² · " }),
-    new TextRun({ text: "Eria Othieno Pinyi" }), new TextRun({ text: "³ · " }),
-    new TextRun({ text: "David Mike-Ewewie" }), new TextRun({ text: "⁴" }),
+    new TextRun({ text: "Friday Ogochukwu Ikwuogu", bold: true }), new TextRun({ text: "Â¹* Â· " }),
+    new TextRun({ text: "Abidemi Orimogunje" }), new TextRun({ text: "Â² Â· " }),
+    new TextRun({ text: "Eria Othieno Pinyi" }), new TextRun({ text: "Â³ Â· " }),
+    new TextRun({ text: "David Mike-Ewewie" }), new TextRun({ text: "â´" }),
   ]}),
-  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 }, children: [new TextRun({ text: "¹ Independent Researcher - Critical Infrastructure, Odessa, Texas, USA", size: 18 })] }),
-  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 }, children: [new TextRun({ text: "² Electrical and Electronic Engineering Department, Redeemer's University, Ede, Osun State, Nigeria", size: 18 })] }),
-  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 }, children: [new TextRun({ text: "³ Computer Science and Engineering Department, University of Fairfax, USA", size: 18 })] }),
-  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 200 }, children: [new TextRun({ text: "⁴ Computer Science Department, University of Texas Permian Basin, Odessa, Texas, USA", size: 18 })] }),
+  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 }, children: [new TextRun({ text: "Â¹ Independent Researcher - Critical Infrastructure, Odessa, Texas, USA", size: 18 })] }),
+  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 }, children: [new TextRun({ text: "Â² Electrical and Electronic Engineering Department, Redeemer's University, Ede, Osun State, Nigeria", size: 18 })] }),
+  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 }, children: [new TextRun({ text: "Â³ Computer Science and Engineering Department, University of Fairfax, USA", size: 18 })] }),
+  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 200 }, children: [new TextRun({ text: "â´ Computer Science Department, University of Texas Permian Basin, Odessa, Texas, USA", size: 18 })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 }, children: [
     new TextRun({ text: "*Corresponding author.", size: 18 }),
   ]}),
@@ -74,7 +74,7 @@ const titleBlock = [
     new TextRun({ text: "Affiliation: Independent Researcher - Critical Infrastructure, Odessa, Texas, USA", size: 18 }),
   ]}),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 300 }, children: [
-    new TextRun({ text: "License: CC BY 4.0  ·  Version 1.0.0  ·  Date 2026-09-09  ·  DOI: pending (Zenodo)", size: 18, color: "52514E" }),
+    new TextRun({ text: "License: CC BY 4.0  Â·  Version 1.0.0  Â·  Date 2026-09-09  Â·  DOI: 10.5281/zenodo.22730718", size: 18, color: "52514E" }),
   ]}),
 ];
 

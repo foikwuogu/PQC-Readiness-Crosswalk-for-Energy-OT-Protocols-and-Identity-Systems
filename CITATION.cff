@@ -1,4 +1,4 @@
-cff-version: 1.2.0
+﻿cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
 type: dataset
 title: "PQC Readiness Crosswalk for Energy OT Protocols and Identity Systems"
@@ -20,7 +20,7 @@ authors:
     affiliation: "Computer Science Department, University of Texas Permian Basin, Odessa, Texas, USA"
 license: CC-BY-4.0
 repository-code: "https://github.com/foikwuogu/PQC-Readiness-Crosswalk-for-Energy-OT-Protocols-and-Identity-Systems"
-doi: "10.5281/zenodo.pending"
+doi: "10.5281/zenodo.22730718"
 keywords:
   - "post-quantum cryptography"
   - "operational technology"

@@ -1,33 +1,33 @@
-# PQC Readiness Crosswalk for Energy OT Protocols and Identity Systems
+﻿# PQC Readiness Crosswalk for Energy OT Protocols and Identity Systems
 
-**Friday Ogochukwu Ikwuogu**¹* · **Abidemi Orimogunje**² · **Eria Othieno Pinyi**³ · **David Mike-Ewewie**⁴
+**Friday Ogochukwu Ikwuogu**Â¹* Â· **Abidemi Orimogunje**Â² Â· **Eria Othieno Pinyi**Â³ Â· **David Mike-Ewewie**â´
 
-¹ Independent Researcher - Critical Infrastructure, Odessa, Texas, USA
-² Electrical and Electronic Engineering Department, Redeemer's University, Ede, Osun State, Nigeria
-³ Computer Science and Engineering Department, University of Fairfax, USA
-⁴ Computer Science Department, University of Texas Permian Basin, Odessa, Texas, USA
+Â¹ Independent Researcher - Critical Infrastructure, Odessa, Texas, USA
+Â² Electrical and Electronic Engineering Department, Redeemer's University, Ede, Osun State, Nigeria
+Â³ Computer Science and Engineering Department, University of Fairfax, USA
+â´ Computer Science Department, University of Texas Permian Basin, Odessa, Texas, USA
 
 *Corresponding author.
 ORCID: [0009-0009-2222-1318](https://orcid.org/0009-0009-2222-1318)
 Email: [Friday.ikwuogu@gmail.com](mailto:Friday.ikwuogu@gmail.com)
 Affiliation: Independent Researcher - Critical Infrastructure, Odessa, Texas, USA
 
-**License:** CC BY 4.0 · **Version:** 1.0.0 · **Date:** 2026-09-09 · **Repository:** github.com/foikwuogu/PQC-Readiness-Crosswalk-for-Energy-OT-Protocols-and-Identity-Systems · **DOI:** pending (Zenodo)
+**License:** CC BY 4.0 Â· **Version:** 1.0.0 Â· **Date:** 2026-09-09 Â· **Repository:** github.com/foikwuogu/PQC-Readiness-Crosswalk-for-Energy-OT-Protocols-and-Identity-Systems Â· **DOI:** [10.5281/zenodo.22730718](https://doi.org/10.5281/zenodo.22730718)
 
 ---
 
 ## Abstract
 
 The National Institute of Standards and Technology (NIST) finalized its first
-three post-quantum cryptography (PQC) standards — FIPS 203 (ML-KEM), FIPS 204
-(ML-DSA), and FIPS 205 (SLH-DSA) — on 2024-08-13. In 2026, Executive Order
+three post-quantum cryptography (PQC) standards â€” FIPS 203 (ML-KEM), FIPS 204
+(ML-DSA), and FIPS 205 (SLH-DSA) â€” on 2024-08-13. In 2026, Executive Order
 14412 and OMB Memorandum M-26-15 set concrete migration deadlines for the
 U.S. federal government, and a companion NIST roadmap (NIST IR 8547) has
 circulated in draft since late 2024. None of this activity has a
 sector-specific counterpart for energy operational technology (OT): the
 protocols that move data between substations, control centers, and
-protection relays — DNP3, IEC 60870-5-104, ICCP/TASE.2, Modbus Security, OPC
-UA, IEC 61850, and IEEE C37.118.2 — were designed around classical
+protection relays â€” DNP3, IEC 60870-5-104, ICCP/TASE.2, Modbus Security, OPC
+UA, IEC 61850, and IEEE C37.118.2 â€” were designed around classical
 cryptography (RSA, ECC, AES, SHA-2) with no PQC migration path defined in any
 of their governing standards as of this writing. This report crosswalks the
 cryptographic primitives specified across seven energy-OT protocols and
@@ -72,7 +72,7 @@ context.
 ## 2. Methodology and scope
 
 The crosswalk's unit of analysis is one row per (protocol or shared
-identity mechanism) × (cryptographic function): key establishment,
+identity mechanism) Ã— (cryptographic function): key establishment,
 authentication/signature, bulk encryption, integrity/MAC, key management and
 distribution, or identity governance. For each row, the build spec
 (`BUILD_SPEC.md`) specifies five measures, defined precisely in
@@ -81,15 +81,15 @@ replacement, the migration mechanism, the driving deadline, and the
 OT-specific constraint that distinguishes this row from a generic federal-IT
 migration.
 
-Primary sources for the federal PQC framework — FIPS 203/204/205, NIST IR
-8547, EO 14412, and OMB M-26-15 — were retrieved and are cited by URL and
+Primary sources for the federal PQC framework â€” FIPS 203/204/205, NIST IR
+8547, EO 14412, and OMB M-26-15 â€” were retrieved and are cited by URL and
 access date in `data/raw/PROVENANCE.txt`. Primary sources for the energy-OT
 protocols themselves are, in several cases, copyrighted and paywalled (the
 full IEC 62351 series, IEC 61850, IEC 60870-5-104/60870-6, and IEEE 1815);
 where that was true, this crosswalk cites the standard by part and clause
 number but draws algorithm-level detail from freely available secondary
-technical sources and flagged the row for review so the author — who has
-direct professional and academic access to these standards — could confirm
+technical sources and flagged the row for review so the author â€” who has
+direct professional and academic access to these standards â€” could confirm
 it, which the author has since done, signing off on 2026-09-09.
 `docs/LIMITATIONS.md` documents this and six other limitations in full; a
 reader without access to the primary standards used for that check may
@@ -102,7 +102,7 @@ also `report/tables/crosswalk_table.md` for a formatted copy) and is
 summarized here by protocol.
 
 **DNP3** (rows 1-3) already uses AES-256-GCM for its authenticated encryption,
-which is *not* broken by Shor's algorithm and needs no replacement — only its
+which is *not* broken by Shor's algorithm and needs no replacement â€” only its
 key-establishment step (a "Low-Entropy Shared Secret" enrollment mechanism
 in Secure Authentication v6) needs a PQC-hybrid upgrade via FIPS 203
 (ML-KEM). The practical obstacle is that DNP3 masters and outstations are
@@ -116,8 +116,8 @@ application-layer "SECURE" association. Both are natural candidates for
 TLS 1.3 hybrid key-exchange groups (already shipping in parts of the general
 TLS ecosystem in 2026) paired with FIPS 204 (ML-DSA) or composite
 certificates. The operational bottleneck is not cryptographic but logistical:
-rotating certificates across thousands of RTUs and gateways, and — for
-ICCP, which crosses utility and balancing-authority trust boundaries —
+rotating certificates across thousands of RTUs and gateways, and â€” for
+ICCP, which crosses utility and balancing-authority trust boundaries â€”
 coordinating that rotation bilaterally between organizations that do not
 share a PKI today.
 
@@ -126,8 +126,8 @@ security specification is freely published (Modbus Organization,
 `modbussecurityprotocol.pdf`, v3.6). It mandates TLS 1.2 or better with a
 specific cipher suite (`TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`) and mutual
 X.509 authentication. A PQC migration here is comparatively well-specified in
-principle — a new IANA-registered hybrid ciphersuite plus updated
-certificates — but Modbus masters are often simple PLCs and gateways with a
+principle â€” a new IANA-registered hybrid ciphersuite plus updated
+certificates â€” but Modbus masters are often simple PLCs and gateways with a
 minimal TLS stack footprint that may not accept a firmware upgrade in place.
 
 **OPC UA** (row 8) is, by deployment volume, probably the highest-leverage
@@ -147,13 +147,13 @@ OPC UA Part 7 (Profiles) by the author as part of the 2026-09-09 sign-off.
 in this report. Protection-class GOOSE trip messages carry a widely cited
 delivery-time budget on the order of 4 milliseconds. FIPS 204 (ML-DSA)
 signatures run roughly 2.4-4.6 KB depending on parameter set, and FIPS 205
-(SLH-DSA) signatures are larger still — both dramatically larger than the
+(SLH-DSA) signatures are larger still â€” both dramatically larger than the
 ECDSA signatures IEC 62351-6 deployments use today. Fitting a PQC signature
 into that timing budget, on the same wire that already carries the trip
 telegram, is not solved by any published revision of IEC 62351-6 as of this
 writing. This is the one row in the crosswalk where the authors believe
-protocol-level engineering research — not just a certificate and cipher-suite
-swap — is the open problem.
+protocol-level engineering research â€” not just a certificate and cipher-suite
+swap â€” is the open problem.
 
 **IEEE C37.118.2 / synchrophasor data** (row 12) specifies no cryptography of
 its own; when secured at all, it is wrapped by IEC 61850-90-5 (HMAC/RSA-based
@@ -161,7 +161,7 @@ protection modeled on GOOSE/SMV) or by an external TLS/IPsec tunnel. Given
 that no protocol-native PQC path exists and none is imminent, the pragmatic
 near-term mitigation for phasor measurement unit (PMU) links is the external
 tunnel, secured with the same TLS 1.3-hybrid approach recommended for IEC
-60870-5-104 and ICCP above — a case the CBOM worked example (§5) illustrates
+60870-5-104 and ICCP above â€” a case the CBOM worked example (Â§5) illustrates
 directly.
 
 **IEC 62351-9 key management** (row 11) is, in the authors' assessment, the
@@ -179,7 +179,7 @@ algorithm in CIP-005, CIP-007, or CIP-004. No NERC-mandated PQC migration
 path exists; the Quantum-GUARD Act of 2026, introduced 2026-08-18 by
 Senators Coons and Rounds but not yet enacted, would direct the Federal
 Energy Regulatory Commission to consider quantum-computing risk within its
-grid-reliability authority — a plausible future path to a NERC CIP revision,
+grid-reliability authority â€” a plausible future path to a NERC CIP revision,
 but not a current one.
 
 ## 4. The federal timeline and what it means for energy OT
@@ -190,19 +190,19 @@ initial public draft, with no second draft or final identified as of
 2026-09-09), Executive Order 14412 (signed 2026-06-22), OMB M-26-15 (dated
 2026-06-24), and the introduced-but-not-enacted Quantum-GUARD Act of 2026.
 None of the federal deadlines in this timeline binds a utility or vendor
-directly — OMB M-26-15 explicitly limits itself to federal civilian agencies
-and excludes National Security Systems — but two mechanisms carry the
+directly â€” OMB M-26-15 explicitly limits itself to federal civilian agencies
+and excludes National Security Systems â€” but two mechanisms carry the
 pressure sector-ward regardless: FAR Council contractor-compliance
 rulemaking directed by EO 14412 (due on 180- and 270-day tracks from
 2026-06-22), which will eventually reach any vendor selling into federal
 critical-infrastructure programs; and CISA's own EO-14412-mandated
 cryptographic-bill-of-materials guidance for critical infrastructure owners,
 due on or about 2026-12-19 and **not yet published as of this report**. The
-CBOM template in §5 is deliberately built to be reconciled against that
+CBOM template in Â§5 is deliberately built to be reconciled against that
 guidance once it appears, rather than to preempt it.
 
-Treating the federal outcome dates — 2030-12-31 for key establishment,
-2031-12-31 for digital signatures — as *analogous planning targets* rather
+Treating the federal outcome dates â€” 2030-12-31 for key establishment,
+2031-12-31 for digital signatures â€” as *analogous planning targets* rather
 than binding requirements is this report's suggested framing for utility
 planners: energy OT's multi-decade asset lifecycles make it likely the
 sector will lag the federal timeline by years absent its own mandate, and
@@ -212,10 +212,10 @@ more than that.
 ## 5. The CBOM template
 
 `cbom/cbom_template.schema.json` defines a flat, spreadsheet-friendly
-cryptographic inventory record — asset identity, protocol, cryptographic
+cryptographic inventory record â€” asset identity, protocol, cryptographic
 function, algorithm and key size, quantum-vulnerability classification,
 intended PQC replacement, vendor support status, and the utility's own
-migration status — deliberately scoped to be filled in today, ahead of any
+migration status â€” deliberately scoped to be filled in today, ahead of any
 published federal CBOM standard. `cbom/cbom_example_filled.csv` works
 through six illustrative rows: a substation gateway's key-establishment and
 authentication dependencies (both ECC/RSA, both flagged for migration), a
@@ -223,15 +223,15 @@ protection relay's GOOSE/SV signature (echoing the row 9 latency problem
 above, marked for vendor engagement rather than self-remediation), a
 control-center ICCP server already piloting a hybrid key exchange, a root
 certificate authority (marked as the highest-priority target, consistent
-with §3's assessment of IEC 62351-9), and a synchrophasor unit with no
+with Â§3's assessment of IEC 62351-9), and a synchrophasor unit with no
 native cryptography of its own, illustrating that a real CBOM sometimes
 records the *tunnel* carrying a protocol's traffic as the actual unit of
 migration rather than the protocol itself.
 
 ## 6. Recommendations
 
-For utilities: begin a CBOM inventory now, using the template in §5 or an
-equivalent, prioritized by the sequencing argument in §3 — the PKI/CA layer
+For utilities: begin a CBOM inventory now, using the template in Â§5 or an
+equivalent, prioritized by the sequencing argument in Â§3 â€” the PKI/CA layer
 first, then TLS-capable gateways and servers, then constrained field devices
 last. Track CISA's forthcoming CBOM guidance (due ~2026-12-19) and reconcile
 rather than restart. Treat the 2030/2031 federal outcome dates as planning
@@ -262,7 +262,7 @@ than a locally hashed source copy (L2); the analytical (not yet
 standards-confirmed) nature of every `pqc_replacement` and
 `migration_mechanism` cell (L3); the non-binding nature of the federal
 deadlines cited throughout (L4); the unverified provenance of the ~4 ms
-GOOSE latency figure used in §3 (L5); scope choices confirmed with the
+GOOSE latency figure used in Â§3 (L5); scope choices confirmed with the
 author rather than independently derived (L6); and this document's nature as
 a versioned snapshot rather than a live-maintained feed, in a policy area
 moving quickly (L7).
@@ -270,7 +270,7 @@ moving quickly (L7).
 ## 8. Conclusion
 
 Post-quantum cryptography is no longer a research topic for the U.S. federal
-government — it is a standard, a signed executive order, and a funded OMB
+government â€” it is a standard, a signed executive order, and a funded OMB
 migration plan with 2030 and 2031 deadlines. It is still, as of this
 writing, a research topic for energy-sector operational technology, where
 not one governing protocol standard names a PQC algorithm and the sector's
@@ -278,7 +278,7 @@ own transition roadmap (NIST IR 8547) remains in draft. This crosswalk is
 offered as a starting reference for closing that gap: a row-by-row map from
 what each protocol specifies today to what it will need tomorrow, a CBOM
 template to start the inventory that any migration depends on, and an honest
-accounting — six flagged rows, seven documented limitations — of exactly
+accounting â€” six flagged rows, seven documented limitations â€” of exactly
 where this v1.0 reference still needs the reader's own verification before
 it is relied upon.
 

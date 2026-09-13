@@ -1,4 +1,4 @@
-# PQC Readiness Crosswalk for Energy OT Protocols and Identity Systems
+﻿# PQC Readiness Crosswalk for Energy OT Protocols and Identity Systems
 
 **Status:** Verified, v1.0 (author sign-off 2026-09-09) | **Maintainer:** Friday Ogochukwu Ikwuogu, [ORCID 0009-0009-2222-1318](https://orcid.org/0009-0009-2222-1318) | **License:** code [MIT](LICENSE), data/docs [CC BY 4.0](LICENSE-CC-BY-4.0)
 
@@ -26,7 +26,7 @@ CITATION.cff            machine-readable citation
 LICENSE                 MIT (code)
 LICENSE-CC-BY-4.0       CC BY 4.0 (data, CBOM template, documents)
 code/                   numbered scripts, run in order (see below)
-data/raw/               PROVENANCE.txt — every source cited, with URL and access date
+data/raw/               PROVENANCE.txt â€” every source cited, with URL and access date
 data/processed/         crosswalk.csv, timeline.csv, qa_report.txt
 cbom/                   CBOM JSON Schema, a blank CSV template, and a worked example
 report/                 stats.json, figures/, and the technical report (Markdown + DOCX)
@@ -59,7 +59,7 @@ and reproduce everything under `data/processed/` and `report/` exactly.
 
 See `data/raw/PROVENANCE.txt` for the full list with URLs and access dates.
 Headline sources: NIST FIPS 203/204/205 (final, 2024-08-13); NIST IR 8547
-(initial public draft, 2024-11-12 — **still a draft**, not final, as of this
+(initial public draft, 2024-11-12 â€” **still a draft**, not final, as of this
 release); Executive Order 14412 (2026-06-22); OMB Memorandum M-26-15
 (2026-06-24); the Quantum-GUARD Act of 2026 (introduced 2026-08-18, not
 enacted); the Modbus/TCP Security Protocol Specification v3.6 (freely
@@ -75,7 +75,7 @@ cryptographic functions. Six of the thirteen rows (46%) originally carried a
 review flag because an algorithm-parameter detail could not be confirmed from
 a directly machine-readable primary source inside this build's sandbox; the
 author has since checked each against the primary standard and signed off on
-2026-09-09 — see `docs/VERIFY_CHECKLIST.md` for the record. NIST IR 8547, the roadmap every federal PQC plan
+2026-09-09 â€” see `docs/VERIFY_CHECKLIST.md` for the record. NIST IR 8547, the roadmap every federal PQC plan
 is told to align with, remains an initial public draft with no second draft
 or final identified as of 2026-09-09. CISA's cryptographic-bill-of-materials
 guidance for critical infrastructure, due under EO 14412 around 2026-12-19,
@@ -86,10 +86,10 @@ sizes may not fit without a lighter-weight scheme.
 
 ## Limitations
 
-See `docs/LIMITATIONS.md` before using or citing anything here — in
+See `docs/LIMITATIONS.md` before using or citing anything here â€” in
 particular, the paywalled-standards limitation (L1) and the sandbox
 network-access limitation (L2) that shaped how sources were cited.
 
 ## Citation
 
-See `CITATION.cff`. DOI: pending first Zenodo release.
+See `CITATION.cff`. DOI: [10.5281/zenodo.22730718](https://doi.org/10.5281/zenodo.22730718).
